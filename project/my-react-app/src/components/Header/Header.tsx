@@ -1,27 +1,33 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import "./Header.css";
 
 export const Header = () => {
+  const location = useLocation();
+
+  const pages = [
+    { path: "/", label: "Главная" },
+    { path: "/about", label: "О проекте" },
+    { path: "/character", label: "Персонажи" },
+    { path: "/location", label: "Локации" },
+    { path: "/trailer", label: "Трейлер" },
+  ];
+
   return (
     <header className="header">
-      <div className="container">
-        <nav className="navbar">
-          <ul className="navbar-menu">
-            <li>
-              <Link to={"/trailer"}>Trailer</Link>
-            </li>
-            <li>
-              <Link to={"/about"}>About</Link>
-            </li>
-            <li>
-              <Link to={"/character"}>Character</Link>
-            </li>
-            <li>
-              <Link to={"/location"}>Location</Link>
-            </li>
-          </ul>
-        </nav>
-      </div>
+      <nav>
+        {pages.map((page) => {
+          if (location.pathname === page.path) return null;
+          return (
+            <Link 
+              key={page.path} 
+              to={page.path}
+              className="header__link"
+            >
+              {page.label}
+            </Link>
+          );
+        })}
+      </nav>
     </header>
   );
 };
-

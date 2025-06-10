@@ -1,0 +1,16 @@
+{
+  "characters": [
+    {
+      "id": "1",
+      "name": "Leon S. Kennedy",
+      "description": "Leon S. Kennedy, a rookie cop when the Raccoon City Incident took place six years ago, has become an agent working directly under the President. Having gone through many different missions since the incident, Leon has matured significantly.",
+      "image": "src/assets/character_leon.png"
+    },
+    {
+      "id": "0a86",
+      "name": "123",
+      "description": "123213",
+      "image": "фыва"
+    }
+  ]
+}

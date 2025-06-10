@@ -1,1 +1,2 @@
-export * from "./location";
+export * from './location';
+export { default as Location } from './location';

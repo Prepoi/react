@@ -1,54 +1,111 @@
-# React + TypeScript + Vite
+Описание проекта
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Это приложение на React с TypeScript демонстрирует полный цикл CRUD-операций (Create, Read, Update, Delete) для управления персонажами. В качестве эмуляции работы с API используется локальныый JSON Server.
 
-Currently, two official plugins are available:
+🛠 Технологии
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+React (v18+)
+TypeScript
+JSON Server (имитация работы с API)
+React Router (навигация)
+Bootstrap (стилизация карусели)
+Vite (сборка проекта)
 
-## Expanding the ESLint configuration
+✨ Функционал
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Получение списка персонажей (GET)
+Добавление нового персонажа (POST)
+Редактирование существующего персонажа (PUT)
+Удаление персонажа (DELETE)
+Интерактивная карусель для просмотра
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
+🚀 Установка и запуск
+
+Клонируйте репозиторий:
+git clone https://github.com/Prepoi/react/tree/2bb8717c1cfd29fbd27a312ea84a981654a6af7e/project/my-react-app
+cd my-react-app
+
+Установите зависимости:
+npm install
+Запустите JSON Server (в отдельном терминале):
+json-server --watch db.json --port 3000
+
+Запустите React-приложение:
+npm run dev
+
+Откройте в браузере:
+http://localhost:5173
+
+Для остановки проекта:
+q + enter
+
+📂 Структура проекта
+src/
+├── assets/
+│   ├── background_top.png
+│   ├── bg_trailer.png
+│   ├── characters_leon.png
+│   ├── ps4-Photoroom.png
+│   ├── ps5-Photoroom.png
+│   ├── steam-Photoroom.png
+│   ├── xbox-Photoroom.png
+│   ├── about_up.png
+│   ├── about_down.png
+│   ├── about_img_1.png
+│   ├── about_img_2.png
+│   ├── about_img_3.png
+├── pages/
+│   ├── about/
+│   │   ├── about.tsx
+│   │   ├── index.ts
+│   ├── character/
+│   │   ├── character.tsx  # Компонент управления персонажами
+│   │   ├── index.ts
+│   ├── location/
+│   │   ├── location.tsx
+│   │   ├── index.ts
+│   ├── top/
+│   │   ├── Top.tsx
+│   │   ├── index.ts
+│   ├── trailer/
+│   │   ├── trailer.tsx
+│   │   ├── index.ts
+├── navigate/
+│   └── routes.tsx
+├── App.tsx            # Главный компонент
+└── App.css
+db.json                # База данных JSON Server
+
+🌐 API Endpoints
+JSON Server предоставляет следующие endpoints:
+
+GET /characters - получить всех персонажей
+
+POST /characters - создать нового персонажа
+
+PUT /characters/:id - полностью обновить персонажа
+
+PATCH /characters/:id - частично обновить персонажа
+
+DELETE /characters/:id - удалить персонажа
+
+Пример структуры данных персонажа:
+
+{
+  "characters": [
+    {
+      "id": "1",
+      "name": "Leon S. Kennedy",
+      "description": "Leon S. Kennedy, a rookie cop when the Raccoon City Incident took place six years ago, has become an agent working directly under the President. Having gone through many different missions since the incident, Leon has matured significantly.",
+      "image": "src/assets/character_leon.png"
     },
-  },
-})
-```
+    ...
+  ]
+}
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+📝 Лицензия
+Этот проект распространяется под лицензией MIT.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+Автор: островский Иван Павлович
+Группа: ПИЭ-31
+Год: 2025
