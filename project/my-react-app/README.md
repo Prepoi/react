@@ -22,7 +22,7 @@ Vite (сборка проекта)
 🚀 Установка и запуск
 
 Клонируйте репозиторий:
-git clone https://github.com/Prepoi/react/tree/2bb8717c1cfd29fbd27a312ea84a981654a6af7e/project/my-react-app
+git clone https://github.com/Prepoi/react.git
 cd my-react-app
 
 Установите зависимости:
